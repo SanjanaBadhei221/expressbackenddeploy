@@ -1,0 +1,215 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <style>
+    body{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #e6fffa, #f8fafc);
+        margin: 0;
+        padding: 20px;
+    }
+
+    h1{
+        text-align: center;
+        margin-bottom: 30px;
+        color: #0f172a;
+        letter-spacing: 1px;
+    }
+
+    section{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 25px;
+    }
+
+    section div{
+        background: #ffffff;
+        padding: 18px;
+        border-radius: 14px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+        border-left: 5px solid #14b8a6; /* teal accent */
+    }
+
+    section div:hover{
+        transform: translateY(-8px);
+        box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+
+    h3{
+        margin-top: 0;
+        color: #020617;
+        font-size: 20px;
+    }
+
+    p{
+        margin: 6px 0;
+        color: #475569;
+        font-size: 14px;
+    }
+
+    /* Price */
+    p:nth-child(2){
+        color: #0d9488;
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+    /* Rating */
+    p:nth-child(3){
+        color: #eab308;
+        font-weight: 500;
+    }
+
+</style>
+</head>
+<body>
+    <h1>Items Page</h1>
+ 
+  <section>
+    <% items.forEach((ele)=>{ %>
+        <div>
+            <h3><%= ele.name %></h3>
+            <p>Price: <%= ele.price %></p>
+            <p>Rating: <%= ele.rating %></p>
+            <p><%= ele.description %></p>
+             <button>BUY</button>
+        </div>
+    <% }) %>
+   
+</section>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Items Page</title>
+
+    <style>
+    body{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #e6fffa, #f8fafc);
+        margin: 0;
+        padding: 20px;
+    }
+
+    h1{
+        text-align: center;
+        margin-bottom: 30px;
+        color: #0f172a;
+        letter-spacing: 1px;
+    }
+
+    section{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 25px;
+    }
+
+    section div{
+        background: #ffffff;
+        padding: 18px;
+        border-radius: 14px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+        border-left: 5px solid #14b8a6;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    section div:hover{
+        transform: translateY(-8px);
+        box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+
+    h3{
+        margin-top: 0;
+        color: #020617;
+        font-size: 20px;
+    }
+
+    p{
+        margin: 6px 0;
+        color: #475569;
+        font-size: 14px;
+    }
+
+    /* Price */
+    p:nth-child(2){
+        color: #0d9488;
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+    /* Rating */
+    p:nth-child(3){
+        color: #eab308;
+        font-weight: 500;
+    }
+
+    /* BUTTON STYLE */
+    button{
+        margin-top: 12px;
+        padding: 10px;
+        border: none;
+        border-radius: 8px;
+        background: #14b8a6;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    button:hover{
+        background: #0d9488;
+        transform: scale(1.05);
+    }
+
+    button:active{
+        transform: scale(0.98);
+    }
+
+</style>
+</head>
+<body>
+
+    <h1>Items Page</h1>
+
+    <section>
+        <% items.forEach((ele)=>{ %>
+            <div>
+                <h3><%= ele.name %></h3>
+                <p>Price: <%= ele.price %></p>
+                <p>Rating: <%= ele.rating %></p>
+                <p><%= ele.description %></p>
+                <!-- <button>BUY</button> -->
+                 <a href="/shopping">
+  <button class="bg-teal-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-teal-700 transition">
+    Buy
+  </button>
+</a>
+            </div>
+        <% }) %>
+    </section>
+
+</body>
+</html>

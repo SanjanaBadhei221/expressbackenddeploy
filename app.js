@@ -5,8 +5,7 @@ const session = require("express-session");
 
 
 
-const ItemModel = require("./models/public.model");
-const UserModel = require("./models/public.model");
+const {StundentModel,UserModel}=require("./models/public.model")
 
 
 
@@ -61,7 +60,10 @@ app.get("/shopping",(req,res)=>{
 app.get("/dashboard", dashboardController);   
 
 
-
+app.get("/atlasData",async (req,res) => {
+    const data =await StundentModel.find()
+    res.json({data})
+})
 // app.post("/registerform",async(req,res)=>{
 //   const data=req.body
 //     console.log(data);

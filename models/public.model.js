@@ -99,4 +99,17 @@ const ItemModel = mongoose.model("Item", itemSchema)
 const UserModel = mongoose.model("User", userSchema)
 
 // ✅ export separately
-module.exports = UserModel
+
+
+
+
+
+const u_schema=new mongoose.Schema({
+  username:String,
+  age:Number,
+  gender:String
+})
+
+const StundentModel=mongoose.model("user",u_schema)
+
+module.exports = {UserModel,StundentModel,ItemModel}
